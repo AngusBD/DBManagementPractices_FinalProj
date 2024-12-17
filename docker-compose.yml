@@ -26,6 +26,7 @@ services:
       MYSQL_PASSWORD: my_password
     volumes:
       - db_data:/var/lib/mysql
+      - ./db-init:/docker-entrypoint-initdb.d  # 自動執行的 SQL 初始化腳本目錄
 
 volumes:
   db_data:
