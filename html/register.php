@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="style.css">
 <form action="register.php" method="POST">
     <input type="text" name="username" placeholder="Username" required>
     <input type="email" name="email" placeholder="Email" required>

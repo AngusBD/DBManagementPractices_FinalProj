@@ -24,6 +24,7 @@ header a:hover {
     text-decoration: underline;
 }
 
+/* 容器樣式 */
 .container {
     max-width: 800px;
     margin: 20px auto;
@@ -33,56 +34,20 @@ header a:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* 表單樣式 */
-form {
-    margin-bottom: 20px;
-}
-
-form input,
-form textarea,
-form button {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    background-color: #333;
-    color: white;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #555;
-}
-
 /* 貼文樣式 */
 .post {
-    margin-bottom: 20px;
+    background: white;
     padding: 15px;
-    background: #fafafa;
-    border: 1px solid #ddd;
+    margin-bottom: 15px;
     border-radius: 5px;
-}
-
-.post h3 {
-    margin: 0 0 10px;
-    font-size: 18px;
-    color: #555;
-}
-
-.post p {
-    margin: 0 0 10px;
-    line-height: 1.5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .post img {
     max-width: 100%;
     height: auto;
-    border-radius: 5px;
     margin-top: 10px;
+    border-radius: 5px;
 }
 
 .post small {
@@ -91,4 +56,105 @@ form button:hover {
     color: #999;
     font-size: 12px;
     text-align: right;
+}
+
+/* 貼文動作 */
+.post-actions {
+    margin-top: 10px;
+}
+
+.post-actions button {
+    margin-right: 5px;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.post-actions button:hover {
+    background-color: #555;
+}
+
+/* 表單樣式 */
+form {
+    margin: 20px auto;
+    width: 50%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form textarea,
+form button {
+    width: 90%;
+    padding: 10px;
+    margin: 10px auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+form:empty {
+    display: none;
+}
+
+/* 全域按鈕樣式 */
+button,
+input[type="button"],
+input[type="submit"],
+a.button {
+    display: inline-block;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+a.button:hover {
+    background-color: #45a049;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+button:active,
+input[type="button"]:active,
+input[type="submit"]:active,
+a.button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+p {
+    text-align: center;
 }

@@ -38,7 +38,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 }
 ?>
 
+
 <!-- 登入表單 -->
+<link rel="stylesheet" href="style.css">
 <form action="login.php" method="POST">
     <input type="text" name="username" placeholder="Username or Email" required>
     <input type="password" name="password" placeholder="Password" required>
@@ -46,7 +48,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 </form>
 
 <!-- 註冊按鈕 -->
-<p>還沒有帳號嗎？ <a href="register.php"><button type="button">註冊</button></a></p>
+<p>還沒有帳號嗎？ 
+    <a href="register.php" class="button">註冊</a>
+</p>
 
 <!-- 錯誤訊息顯示 -->
 <?php if (isset($error_message)): ?>

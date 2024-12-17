@@ -30,6 +30,7 @@ $posts = $conn->query("SELECT posts.id, posts.content, posts.image, posts.create
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>簡易社交網路平台</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -73,8 +74,8 @@ $posts = $conn->query("SELECT posts.id, posts.content, posts.image, posts.create
     <div class="header">
         <h1>簡易社交網路平台</h1>
         <span>歡迎, <?php echo htmlspecialchars($username); ?>!</span>
-        <a href="post.php">發表貼文</a>
-        <a href="logout.php">登出</a>
+        <a href="post.php"><button type="button">發表貼文</button></a>
+        <a href="logout.php"><button type="button">登出</button></a>
     </div>
     <div class="container">
         <h2>動態牆</h2>
@@ -96,7 +97,7 @@ $posts = $conn->query("SELECT posts.id, posts.content, posts.image, posts.create
                 $likes_stmt->fetch();
                 $likes_stmt->close();
                 ?>
-                <form action="like_post.php" method="POST" style="display: inline;">
+                <form action="like_post.php" method="POST">
                     <input type="hidden" name="post_id" value="<?php echo $post['id']; ?>">
                     <button type="submit">👍 按讚 (<?php echo $like_count; ?>)</button>
                 </form>
@@ -104,11 +105,11 @@ $posts = $conn->query("SELECT posts.id, posts.content, posts.image, posts.create
                 <!-- 貼文動作 -->
                 <?php if ($post['user_id'] == $user_id): ?>
                     <div class="post-actions">
-                        <form action="edit_post.php" method="POST" style="display: inline;">
+                        <form action="edit_post.php" method="POST">
                             <input type="hidden" name="post_id" value="<?php echo $post['id']; ?>">
                             <button type="submit">編輯</button>
                         </form>
-                        <form action="delete_post.php" method="POST" style="display: inline;">
+                        <form action="delete_post.php" method="POST">
                             <input type="hidden" name="post_id" value="<?php echo $post['id']; ?>">
                             <button type="submit" onclick="return confirm('確定要刪除這則貼文嗎？');">刪除</button>
                         </form>
@@ -117,7 +118,7 @@ $posts = $conn->query("SELECT posts.id, posts.content, posts.image, posts.create
 
                 <!-- 追蹤按鈕 -->
                 <?php if ($post['user_id'] != $user_id): ?>
-                    <form action="follow_user.php" method="POST" style="display: inline;">
+                    <form action="follow_user.php" method="POST">
                         <input type="hidden" name="following_id" value="<?php echo $post['user_id']; ?>">
                         <button type="submit">追蹤</button>
                     </form>
